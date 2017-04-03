@@ -7,15 +7,16 @@ class SessionsController < ApplicationController
   	user = User.find_by(email: params[:session][:email].downcase)
   	#log the user in if he exists
     if user && user.authenticate(params[:session][:password])
-    	log_in user
-      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      remember user
-    	# Redirect to the user's profile page. Same as user_url(user)
-    	redirect_back_or user
-    else
-    	flash[:danger] = 'Invalid email/password combination'
-  		render 'new'
-    end
+    	if user.activated?
+        log_in user
+        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+        redirect_back_or user
+      else
+        message  = "Account not activated. "
+        message += "Check your email for the activation link."
+        flash[:warning] = message
+        redirect_to root_url
+      end
   end
 
   def destroy
