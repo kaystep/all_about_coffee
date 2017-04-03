@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       remember user
     	# Redirect to the user's profile page. Same as user_url(user)
-    	redirect_to user
+    	redirect_back_or user
     else
     	flash[:danger] = 'Invalid email/password combination'
   		render 'new'
