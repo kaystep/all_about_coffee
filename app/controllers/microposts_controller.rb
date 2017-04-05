@@ -14,14 +14,14 @@ class MicropostsController < ApplicationController
 
 	def destroy
     @micropost.destroy
-    flash[:success] = "Review deleted"
+    flash[:success] = "Your review has been deleted"
     redirect_to request.referrer || root_url
   end
 
 	private
 
     def micropost_params
-      params.require(:micropost).permit(:content)
+      params.require(:micropost).permit(:content, :picture)
     end
 
     def correct_user
