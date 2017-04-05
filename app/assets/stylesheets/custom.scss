@@ -9,6 +9,8 @@
   }
 }
 
+
+
  body {
     background-image: url('/assets/coffee_beans.jpg')
 }
@@ -40,6 +42,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  color: #FFFFFF;
 }
 
 h2 {
@@ -48,12 +51,18 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #777;
+  color: #FFFFFF;
+}
+
+h3 {
+	color: #FFFFFF;
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+  color: #FFFFFF;
+  text-align: center;
 }
 
 /* sidebar */
@@ -173,13 +182,14 @@ input {
   .content {
     display: block;
     margin-left: 60px;
+    color: #FFFFFF;
     img {
       display: block;
       padding: 5px 0;
     }
   }
   .timestamp {
-    color: $gray-light;
+    color: #FFFFFF;
     display: block;
     margin-left: 60px;
   }
@@ -188,7 +198,12 @@ input {
     margin-right: 10px;
     margin-top: 5px;
   }
+  .clearfix {
+  clear: both;
+  }
 }
+
+
 
 aside {
   textarea {
