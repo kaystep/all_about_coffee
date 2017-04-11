@@ -1,0 +1,7 @@
+<% provide(:title, 'Coffee Reviews') %>
+
+<ul class="microposts">
+  <% @microposts.each do |micropost| %>
+   <%= render @microposts %>
+  <% end %>
+</ul>

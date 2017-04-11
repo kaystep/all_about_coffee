@@ -6,6 +6,11 @@ class Micropost < ApplicationRecord
   validates :content, presence: true
   validate  :picture_size
 
+  #function for searching for coffee reviews
+  def self.search(search)
+  	where("content ILIKE ?", "%#{search}")
+  end
+
   private
 
     # Validates the size of an uploaded picture.
