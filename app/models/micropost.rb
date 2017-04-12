@@ -8,7 +8,7 @@ class Micropost < ApplicationRecord
 
   #function for searching for coffee reviews
   def self.search(search)
-  	where("content ILIKE ?", "%#{search}")
+  	where("content ILIKE ?", "%#{search}%") 
   end
 
   private
