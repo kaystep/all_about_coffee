@@ -20,12 +20,7 @@ class MicropostsController < ApplicationController
   end
 
   def index
-    @microposts = Micropost.all
-    if params[:search]
-      @microposts = Micropost.search(params[:search]).order("created_at DESC")
-    else
-      @microposts = Micropost.all.order("created_at DESC")
-    end
+    @microposts = Micropost.search(params[:search])
   end
 
 
