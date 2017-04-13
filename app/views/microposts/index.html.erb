@@ -1,7 +1,19 @@
 <% provide(:title, 'Coffee Reviews') %>
+<h1>Coffee Reviews</h1>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+    </tr>
+  </thead>
 
-<ul class="microposts">
-  <% @microposts.each do |micropost| %>
-   <%= render @microposts %>
-  <% end %>
-</ul>
+  <tbody>
+    <tr>
+<% for micropost in @microposts %>
+        <div class='task'>
+            <strong> <%= micropost.content %> </strong>
+        </div>
+      <% end %>
+       </tr>       
+  </tbody>
+</table>

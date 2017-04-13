@@ -20,14 +20,18 @@ class MicropostsController < ApplicationController
   end
 
   def index
-    @microposts = Micropost.search(params[:search])
+  @microposts = if params[:search]
+    Micropost.where('content ILIKE ?', "%#{params[:search]}%")
+  else
+    Micropost.all
   end
+end
 
 
 	private
 
     def micropost_params
-      params.require(:micropost).permit(:content, :picture)
+      params.require(:micropost).permit(:content, :picture, :search)
     end
 
     def correct_user

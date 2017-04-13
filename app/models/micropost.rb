@@ -7,9 +7,7 @@ class Micropost < ApplicationRecord
   validate  :picture_size
 
   #function for searching for coffee reviews
-  def self.search(search)
-  	where("content ILIKE ?", "%#{search}%") 
-  end
+  
 
   private
 
