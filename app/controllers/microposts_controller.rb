@@ -21,7 +21,7 @@ class MicropostsController < ApplicationController
 
   def index
   @microposts = if params[:search]
-    Micropost.where('content ILIKE ?', "%#{params[:search]}%")
+    Micropost.where('content LIKE ?', "%#{params[:search]}%")
   else
     Micropost.all
   end
