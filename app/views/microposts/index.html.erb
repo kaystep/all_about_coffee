@@ -2,20 +2,15 @@
 
 
 <h1>Coffee Reviews</h1>
-<table>
-  <thead>
-    <tr>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <tr>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+   
 <% for micropost in @microposts %>
         <div class='task'>
-            <strong> <%= micropost.content %> </strong>
+            <p> <%= micropost.content %> </p>
         </div>
       <% end %>
-       </tr>       
-  </tbody>
-</table>
+    </div>
+</div>
+
