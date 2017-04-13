@@ -20,10 +20,11 @@ class MicropostsController < ApplicationController
   end
 
   def index
-  @microposts = if params[:search]
-    Micropost.where('content LIKE ?', "%#{params[:search]}%")
+  @microposts = Micropost.all
+  if params[:search]
+    @microposts = Micropost.search(params[:search]).order("created_at DESC")
   else
-    Micropost.all
+    @microposts = Micropost.all.order("created_at DESC")
   end
 end
 

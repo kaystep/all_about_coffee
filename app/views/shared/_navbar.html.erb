@@ -13,15 +13,15 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <form class="navbar-form navbar-right">
+     
         <div class="form-group">
-          <%= form_tag(microposts_path, method:  :get) do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Coffee Reviews" %>
-          <%= submit_tag "Search", :name => nil %>
-        <% end %>
-        </div>
+          <%= form_tag(microposts_path, :method => "get", class: "navbar-form navbar-right") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Reviews" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>        
+</div>
         <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+      
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "About",   about_path %></li>
   
